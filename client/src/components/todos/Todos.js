@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Todos= () => {
+const Todos= ({ todo }) => {
     return(
         <div className="container">
-            <h4>Todos</h4>
+            <p>{todo.todo}, {todo.createdAt}</p>
         </div>
     )
 }

@@ -6,4 +6,5 @@ module.exports = function(app) {
   app.use(proxy("/profile/", { target: "http://localhost:5002/" }));
   app.use(proxy("/posts/", { target: "http://localhost:5002/" }));
   app.use(proxy("/auth/logout/", { target: "http://localhost:5002/" }));
+  app.use(proxy("/todo/*", { target: "http://localhost:5002/" }));
 };

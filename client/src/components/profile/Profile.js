@@ -28,6 +28,7 @@ const Profile = () => {
 
     return(
         <div className="jumbotron">
+          <br /><br />
            <h1 className="display-4">Howdy, <b>{name}!</b></h1><br />
            <p className="lead">We got these details about you.</p>
            <hr className="my-4" />

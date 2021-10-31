@@ -4,7 +4,7 @@ import { ADD_TODO, ADD_TODO_ERROR, GET_TODOS, GET_TODOS_ERROR } from '../constan
 export const addTodo = (todo) => {
     return (dispatch, getState) => {
         axios.post('/todo/addtodo', { todo })
-            .then(() => {
+            .then((resp) => {
                 console.log(resp.data)
                 if(resp.data.success == true){
                     dispatch({
@@ -27,7 +27,7 @@ export const addTodo = (todo) => {
 export const getTodos = () => {
     return (dispatch) => {
         axios.get('/todo/gettodos')
-            .then(() => {
+            .then((resp) => {
                 console.log(resp.data)
                 if(resp.data.success == true){
                     dispatch({
