@@ -1,0 +1,6 @@
+export const GET_CURRENT_USER = 'GET_CURRENT_USER'
+export const USER_LOGOUT = 'USER_LOGOUT'
+export const ADD_TODO = 'ADD_TODO'
+export const ADD_TODO_ERROR = 'ADD_TODO_ERROR'
+export const GET_TODOS = 'GET_TODOS'
+export const GET_TODOS_ERROR = 'GET_TODOS_ERROR'
