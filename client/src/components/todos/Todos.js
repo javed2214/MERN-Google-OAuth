@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Todos= ({ todo }) => {
+const deleteTodo = (todos, setTodos, t) => {
+    console.log( t._id)
+    setTodos(todos.filter((todo) => {
+        console.log(todo._id)
+        return todo._id !== t._id
+    }))
+}
+
+const Todos= () => {
     return(
-        <div className="container">
-            <p>{todo.todo}, {todo.createdAt}</p>
-        </div>
+        <></>
     )
 }
 

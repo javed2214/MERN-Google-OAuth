@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addTodo, getTodos } from '../../actions/todoAction'
+import { addTodo, deleteTodo, getTodos } from '../../actions/todoAction'
 import Todos from './Todos'
 
 const AddTodo = () => {
@@ -13,14 +13,16 @@ const AddTodo = () => {
 
     useEffect(() => {
         dispatch(getTodos())
-    }, [dispatch])
+        setAllTodos(todos)
+    }, [dispatch, todos])
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(todo)
-        dispatch(addTodo(todo))
-        setTodo('')
-        setAllTodos([...todos, todo])
+        if(todo.length >= 5){
+            // setAllTodos([...allTodos, todo])
+            dispatch(addTodo(todo))
+            setTodo('')
+        }
     }
 
     return(
@@ -31,9 +33,10 @@ const AddTodo = () => {
                 <input className="center" type="text" style={{ width: '180%' }} placeholder="Add Todo" value={todo} onChange={(e) => setTodo(e.target.value)} />
             </form><br /><br />
             <div>
+            {allTodos.length}
                 {
-                    todos.length > 0 && todos.map((todo) => {
-                        return <Todos todo={todo} />
+                    allTodos.length > 0 && allTodos.map((todo) => {
+                        return <center key={todo._id}><p key={todo._id} className="card-panel #e0f2f1 teal lighten-5" style={{ width: '35%', padding: '10px', border: '2px solid grey' }}>{todo.todo}<span key={todo._id} onClick={(e) => dispatch(deleteTodo(todo))} style={{ float: 'right', marginTop: '-7px', marginRight: '-8px' }} className="btn #ef5350 red lighten-1">X</span></p></center>
                     })
                 }
             </div>

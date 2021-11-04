@@ -32,7 +32,7 @@ const Navbar = () => {
     )
 
     return(
-        <div>
+        <div style={{ position: 'fixed', width: '100%' }}>
             <nav className="#263238 blue-grey darken-4">
                 <div className="nav-wrapper">
                     <span style={{ marginLeft: '10px', cursor: 'pointer' }} className="brand-logo"><Link style={{ textDecoration: 'none' }} to='/profile'>Todo App</Link></span>
